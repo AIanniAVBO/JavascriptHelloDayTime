@@ -20,13 +20,18 @@ function helloButtonClicked(event) {
 	//Crea un oggetto Date relativo all'ora corrente
 	let date = new Date();
 	
-	let output_p = document.getElementById("message_p");
+	let output_p = getOutputP();
 	
 	output_p.innerHTML = "Buona sera " + input_name + " solo le " + date.getHours() + " e " + date.getMinutes();
 }
 
 //Definizione di una funzione che prende in input un argomento
 function resetButtonClicked(event) {
-	let output_p = document.getElementById("message_p");
+	let output_p = getOutputP();
 	output_p.innerHTML = "";
+}
+
+function getOutputP() {
+	let output_p = document.getElementById("message_p");
+	return output_p;
 }
