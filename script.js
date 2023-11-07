@@ -19,14 +19,17 @@ function inputFocusLost(event) {
 	let input_tag = document.getElementById("fname");
 	//Verifica che non ci siano numeri o spazi
 	if (isInputInvalid()) {
+		//Riporta il focus sull'input
 		input_tag.focus();
 	}
 }
-
+//Funzione che verifica la validità dell'input
 function isInputInvalid() {
+	//Ottiene l'input
 	let input_tag = document.getElementById("fname");
 	//Ottiene il nome inserito
 	let input_name = input_tag.value;
+	//Verifica che non ci siano numeri e che non ci sia una stringa vuota
 	return /[0-9\s]/.test(input_name) || input_name.length == 0;
 }
 
