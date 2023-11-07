@@ -11,4 +11,8 @@ function onAllLoaded(event) {
 
 //Definizione di una funzione che prende in input un argomento
 function helloButtonClicked(event) {
+	//Ottiene il nome inserito
+	let input_name = document.getElementById("fname").value;
+	
+	
 }
