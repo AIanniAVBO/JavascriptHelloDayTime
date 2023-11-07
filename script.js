@@ -13,6 +13,10 @@ function onAllLoaded(event) {
 function helloButtonClicked(event) {
 	//Ottiene il nome inserito
 	let input_name = document.getElementById("fname").value;
+	//Crea un oggetto Date relativo all'ora corrente
+	let date = new Date();
 	
+	let output_p = document.getElementById("message_p");
 	
+	output_p.innerHTML = "Buona sera " + input_name + " solo le " + date.getHours() + " e " + date.getMinutes();
 }
