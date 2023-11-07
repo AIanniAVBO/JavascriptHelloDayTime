@@ -21,8 +21,22 @@ function helloButtonClicked(event) {
 	let date = new Date();
 	//Ottiene l'oggetto di output
 	let output_p = getOutputP();
+	//Ottiene l'ora corrente
+	let hourValue = date.getHours();
+	//Caso escluso dagli if-else seguenti (>=18)
+	let helloMessage = "Buona sera";
+	//Se minore di 6
+	if (hourValue < 6)
+		helloMessage = "Buona notte";
+	//Se compreso fra 6 e 12
+	else if (hourValue < 12)
+		helloMessage = "Buon d\xEC";
+	//Se compreso fra 12 e 18
+	else if (hourValue < 18)
+		helloMessage = "Buon pomeriggio";
 	//Scrive il messaggio di saluto
-	output_p.innerHTML = "Buona sera " + input_name + " solo le " + date.getHours() + " e " + date.getMinutes();
+	output_p.innerHTML = helloMessage + " " + input_name + " solo le " + 
+							hourValue + " e " + date.getMinutes();
 }
 
 //Definizione di una funzione che prende in input un argomento
