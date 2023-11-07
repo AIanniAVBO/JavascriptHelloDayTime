@@ -27,7 +27,7 @@ function isInputInvalid() {
 	let input_tag = document.getElementById("fname");
 	//Ottiene il nome inserito
 	let input_name = input_tag.value;
-	return /[0-9\s]/.test(input_name);
+	return /[0-9\s]/.test(input_name) || input_name.length == 0;
 }
 
 
