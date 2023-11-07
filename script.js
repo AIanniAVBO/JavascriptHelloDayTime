@@ -7,14 +7,34 @@ function onAllLoaded(event) {
 	
 	//Ricerca il tasto helloButton e associa al click la funzione helloButtonClicked
 	document.getElementById("helloButton").addEventListener("click", helloButtonClicked);
-	
+	//Aggiunta l'evento di perdita del focus
+	document.getElementById("fname").addEventListener("focusout", inputFocusLost);
 	
 	//Ricerca il tasto resetButton e associa al click la funzione resetButtonClicked
 	document.getElementById("resetButton").addEventListener("click", resetButtonClicked);
 }
 
+//Funzione che ha il compito di verificare l'input inserito
+function inputFocusLost(event) {
+	let input_tag = document.getElementById("fname");
+	//Verifica che non ci siano numeri o spazi
+	if (isInputInvalid()) {
+		input_tag.focus();
+	}
+}
+
+function isInputInvalid() {
+	let input_tag = document.getElementById("fname");
+	//Ottiene il nome inserito
+	let input_name = input_tag.value;
+	return /[0-9\s]/.test(input_name);
+}
+
+
 //Definizione di una funzione che prende in input un argomento
 function helloButtonClicked(event) {
+	if (isInputInvalid())
+		return;
 	//Ottiene il nome inserito
 	let input_name = document.getElementById("fname").value;
 	//Crea un oggetto Date relativo all'ora corrente
