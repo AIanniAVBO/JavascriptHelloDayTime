@@ -19,9 +19,9 @@ function helloButtonClicked(event) {
 	let input_name = document.getElementById("fname").value;
 	//Crea un oggetto Date relativo all'ora corrente
 	let date = new Date();
-	
+	//Ottiene l'oggetto di output
 	let output_p = getOutputP();
-	
+	//Scrive il messaggio di saluto
 	output_p.innerHTML = "Buona sera " + input_name + " solo le " + date.getHours() + " e " + date.getMinutes();
 }
 
@@ -30,7 +30,7 @@ function resetButtonClicked(event) {
 	let output_p = getOutputP();
 	output_p.innerHTML = "";
 }
-
+//Funzione che restituisce il paragrafo di output
 function getOutputP() {
 	let output_p = document.getElementById("message_p");
 	return output_p;
